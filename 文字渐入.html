@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文字渐入</title>
+    <style>
+        * {
+            margin  : 0;
+            padding : 0;
+        }
+
+        body {
+            background      : #34495E;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            width           : 100vw;
+            height          : 100vh;
+        }
+
+        h1 {
+            font-size               : 50px;
+            background-image        : linear-gradient(75deg,
+            rgba(255, 255, 255, 1) 0%,
+            rgba(255, 255, 255, 1) 33.33%,
+            rgba(255, 255, 255, 0) 66.66%,
+            rgba(255, 255, 255, 0) 0%);
+            background-size         : 300% 100%;
+            /*!*background-clip         : content-box;*!*/
+            -webkit-background-clip : text;
+            color                   : transparent;
+            transition              : all 3s;
+            background-position     : 100%;
+            animation               : run 3s;
+            /*延时播放*/
+            animation-delay         : 0.5s;
+            /*保持最后一帧*/
+            animation-fill-mode     : forwards;
+        }
+
+        @keyframes run {
+            100% {
+                background-position : 0 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <h1>I love you</h1>
+    </div>
+</body>
+</html>

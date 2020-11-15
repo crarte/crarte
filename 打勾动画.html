@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>打勾动画</title>
+    <style>
+        * {
+            margin  : 0;
+            padding : 0;
+        }
+
+        body {
+            height          : 100vh;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            background      : #34495E;
+        }
+
+        div.box {
+            position        : relative;
+            background      : #2C3E50;
+            box-shadow      : 0 2px 3px rgba(0, 0, 0, 0.5);
+            border-radius   : 10px;
+            display         : flex;
+            justify-content : center;
+        }
+
+        input {
+            position : absolute;
+            bottom   : -30px;
+            width    : 20px;
+            height   : 20px;
+        }
+
+        .circle {
+            stroke-dasharray  : 1194;
+            stroke-dashoffset : 1194;
+        }
+
+        input:checked ~ svg .circle {
+            stroke-dasharray    : 1194;
+            animation           : circle 3s;
+            animation-fill-mode : forwards;
+        }
+
+        .tick {
+            stroke-dasharray  : 350;
+            stroke-dashoffset : 350;
+        }
+
+        input:checked ~ svg .tick {
+            stroke-dasharray    : 350;
+            stroke-dashoffset   : 350;
+            animation           : tick 3s;
+            animation-delay     : 2.8s;
+            animation-fill-mode : forwards;
+        }
+
+        @keyframes circle {
+            0% {
+                stroke-dashoffset : 1194;
+            }
+            100% {
+                stroke-dashoffset : 0;
+            }
+        }
+
+        @keyframes tick {
+            0% {
+                stroke-dashoffset : 350;
+            }
+            100% {
+                stroke-dashoffset : 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <input type="radio">
+        <svg height="400" width="400">
+            <circle class="circle" cx="200" cy="200" fill="none" r="190" stroke="#68E534" stroke-linecap="round" stroke-width="20" transform="rotate(-90 200 200) " />
+            <polyline class="tick" fill="none" points="88,214 173,284 304,138" stroke="#68E534" stroke-linecap="round" stroke-linejoin="round" stroke-width="24" />
+        </svg>
+    </div>
+</body>
+</html>

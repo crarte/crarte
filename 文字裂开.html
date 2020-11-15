@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>文字裂开</title>
+    <style>
+        * {
+            margin  : 0;
+            padding : 0;
+        }
+
+        body {
+            width           : 100vw;
+            height          : 100vh;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+            background      : #34495E;
+        }
+
+        .main {
+            width           : 300px;
+            height          : 100px;
+            display         : flex;
+            justify-content : center;
+            align-items     : center;
+        }
+
+        div {
+            position       : absolute;
+            text-transform : uppercase;
+            transition     : all 0.3s;
+        }
+
+        p {
+            text-align : center;
+        }
+
+        div.box {
+            line-height : 100px;
+            font-size   : 100px;
+            color       : #FFFFFF;
+        }
+
+        div.top {
+            clip-path : polygon(0% 0%, 100% 0%, 100% 50%, 0% 50%);
+        }
+
+        div.main:hover .top {
+            transform : translateY(-50px);
+        }
+
+        div.center {
+            width            : 70px;
+            height           : 20px;
+            line-height      : 20px;
+            font-size        : 1px;
+            background-color : #FFECD2;
+            opacity          : 0;
+            transition       : all 0.4s;
+        }
+
+        div.main:hover .center {
+            width            : 200px;
+            height           : 40px;
+            line-height      : 40px;
+            font-size        : 30px;
+            background-color : #FCB69F;
+            opacity          : 1;
+        }
+
+        div.bottom {
+            clip-path : polygon(0% 50%, 100% 50%, 100% 100%, 0% 100%);
+        }
+
+        div.main:hover .bottom {
+            transform : translatey(50px);
+        }
+    </style>
+</head>
+<body>
+    <div class="main">
+        <div class="top box">love</div>
+        <div class="center"><p>i love you</p></div>
+        <div class="bottom box">love</div>
+    </div>
+</body>
+</html>

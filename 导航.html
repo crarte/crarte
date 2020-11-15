@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>导航</title>
+    <style>
+        * {
+            margin  : 0;
+            padding : 0;
+        }
+        
+        body {
+            display         : flex;
+            align-items     : center;
+            justify-content : center;
+            
+            width           : 100vw;
+            height          : 100vh;
+            background      : #34495E;
+        }
+        
+        nav {
+            position      : relative;
+            width         : 500px;
+            height        : 50px;
+            line-height   : 50px;
+            background    : #2C3E50;
+            border-radius : 8px;
+            box-shadow    : 0 2px 3px rgba(0, 0, 0, 0.1);
+        }
+        
+        a {
+            display         : block;
+            float           : left;
+            position        : relative;
+            z-index         : 100;
+            width           : 100px;
+            height          : 100%;
+            text-align      : center;
+            text-decoration : none;
+            color           : white;
+            font-size       : 18px;
+        }
+        
+        nav #slider {
+            position      : absolute;
+            width         : 100px;
+            height        : 100%;
+            background    : #00B894;
+            border-radius : 8px;
+            transition    : all 0.3s;
+        }
+        
+        #slider, nav a:nth-child(1):hover ~ #slider {
+            left : 0;
+        }
+        
+        nav a:nth-child(2):hover ~ #slider {
+            left : 100px;
+        }
+        
+        nav a:nth-child(3):hover ~ #slider {
+            left : 200px;
+        }
+        
+        nav a:nth-child(4):hover ~ #slider {
+            left : 300px;
+        }
+        
+        nav a:nth-child(5):hover ~ #slider {
+            left : 400px;
+        }
+    
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="#">home</a>
+        <a href="#">login</a>
+        <a href="#">float</a>
+        <a href="#">css</a>
+        <a href="#">html</a>
+        <div id="slider"></div>
+    
+    </nav>
+</body>
+</html>
